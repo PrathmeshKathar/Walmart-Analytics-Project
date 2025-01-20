@@ -90,6 +90,30 @@ Below are some insights you can derive using the provided queries in `queries.sq
    GROUP BY month
    ORDER BY month ASC;
    ```
+4. **Category with Highest Profit Margin**  
+   ```sql
+   SELECT category, AVG(profit_margin) AS avg_profit_margin
+   FROM walmart
+   GROUP BY category
+   ORDER BY avg_profit_margin DESC
+   LIMIT 5;
+   ```
+5. **Cities with the Most Transactions**  
+   ```sql
+   SELECT city, COUNT(*) AS transaction_count
+   FROM walmart
+   GROUP BY city
+   ORDER BY transaction_count DESC
+   LIMIT 5;
+   ```
+5. **Revenue Distribution by Payment Method**  
+   ```sql
+   SELECT payment_method, SUM(total) AS total_revenue
+   FROM walmart
+   GROUP BY payment_method
+   ORDER BY total_revenue DESC;
+   ```
+   
 
 ---
 
